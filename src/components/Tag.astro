@@ -1,0 +1,10 @@
+---
+const { label, href, color, bgc } = Astro.props;
+---
+
+<a
+  class={`text-xs text-center text-${color} mb-2 font-semibold tracking-wider py-1 px-2 rounded-full w-fit bg-${bgc}`}
+  href={href}
+>
+  {label}
+</a>

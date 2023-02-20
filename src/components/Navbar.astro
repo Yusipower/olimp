@@ -1,0 +1,109 @@
+---
+import Container from "@components/Container.astro";
+import { Icon } from "astro-icon";
+import Button from "@components/Button.astro";
+
+const links = [
+  {
+    id: 1,
+    title: "Направления",
+    url: "#",
+  },
+  {
+    id: 2,
+    title: "Расписание",
+    url: "#",
+  },
+  {
+    id: 3,
+    title: "Тренеры",
+    url: "#",
+  },
+  {
+    id: 4,
+    title: "Контакты",
+    url: "#",
+  },
+];
+
+// const newLinks = links.filter((newLink) => newLink.id <= 3);
+// console.log(newLinks);
+---
+
+<div class="sticky top-0 z-40">
+  <nav x-data="{ isOpen: false }" class="relative bg-white py-4">
+    <Container class="md:flex md:justify-between md:items-center">
+      <div class="flex items-center justify-between">
+        <a href="/">
+          <Icon name="olimp-logo" class="w-auto h-6 xs:h-8" />
+        </a>
+
+        <!-- Mobile menu button -->
+        <div class="flex md:hidden">
+          <button
+            x-cloak
+            @click="isOpen = !isOpen"
+            type="button"
+            class="text-orange focus:outline-none"
+            aria-label="toggle menu"
+          >
+            <svg
+              x-show="!isOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 8h16M4 16h16"></path>
+            </svg>
+
+            <svg
+              x-show="isOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+      <div
+        x-cloak
+        :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+        class="absolute border-b-2 border-gray-100 md:border-none inset-x-0 z-20 w-full px-[5%] pt-6 pb-2 transition-all duration-300 ease-in-out bg-white md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center"
+      >
+        <ul
+          class="flex flex-col items-center text-center space-y-3 md:space-y-0 md:flex-row"
+        >
+          {
+            links.map((link, id) => (
+              <>
+                <li key={link.id}>
+                  <a
+                    class=" text-lg md:text-base font-medium text-blue py-2 px-4 hover:text-orange transition-colors duration-300 transform"
+                    href={link.url}
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              </>
+            ))
+          }
+        </ul>
+      </div>
+    </Container>
+  </nav>
+</div>

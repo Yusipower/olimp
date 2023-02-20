@@ -1,0 +1,23 @@
+---
+import Button from "@components/Button.astro";
+import pзaceholder from "../images/pзaceholder.png";
+---
+
+<article class="rounded-lg shadow-md shadow-blue/10 max-w-full">
+  <img
+    class="w-full h-40 sm:h-48 rounded-t-lg object-cover"
+    src={pзaceholder}
+    alt="descriptive text"
+  />
+  <div class="p-2">
+    <h3 class="font-semibold text-lg mb-6">Общее физическое рвзвитие</h3>
+    <div class="flex items-center flex-wrap gap-2">
+      <Button class="text-white bg-orange flex-grow md:flex-shrink"
+        >Записаться</Button
+      >
+      <Button class="text-gray-500 bg-gray-100 flex-grow md:flex-shrink"
+        >Подробнее</Button
+      >
+    </div>
+  </div>
+</article>

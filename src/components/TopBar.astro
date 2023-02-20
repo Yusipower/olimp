@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon";
+import Container from "@components/Container.astro";
+---
+
+<div class="w-full bg-orange">
+  <Container class="flex flex-wrap justify-end items-center">
+    <a
+      class="py-2 px-4 text-sm tracking-wide text-gray-100 hover:bg-gray-100 hover:text-orange font-semibold transition-colors duration-200"
+      href="tel:+79019003030"
+    >
+      +7 901 900-30-30
+    </a>
+    <div class="flex items-center text-gray-100">
+      <a
+        class="hover:bg-gray-100 hover:text-orange p-2 transition-colors duration-200"
+        href="https://www.instagram.com/olimp_moscow_/?hl=ru"
+        target="_blank"
+      >
+        <Icon name="ri:instagram-fill" class="max-w-full h-5 text-inherit" />
+      </a>
+      <a
+        class="hover:bg-gray-100 hover:text-orange p-2 transition-colors duration-200"
+        href="https://vk.com/olimpmoscow1"
+        target="_blank"
+      >
+        <Icon name="mdi:vk" class="max-w-full h-5 text-inherit" />
+      </a>
+    </div>
+  </Container>
+</div>

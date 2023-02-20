@@ -1,0 +1,14 @@
+---
+const { href, newTab, class: className, ...rest } = Astro.props;
+const Tag = href ? "a" : "button";
+---
+
+<Tag
+  {...rest}
+  class={`py-3 px-6 flex items-center justify-center font-semibold tracking-wide rounded-lg w-fit ${className}`}
+  href={href}
+  target={`${newTab ? "_blank" : ``}`}
+  rel={`${newTab ? "noopener noreferrer" : ``}`}
+>
+  <slot />
+</Tag>
